@@ -3,7 +3,7 @@ module.exports = {
 
   siteTitle: "Touko Peltomaa's blog", // Navigation and Site Title
   siteTitleAlt: 'Blog - Touko Peltomaa', // Alternative Site title for SEO
-  siteTitleManifest: 'Touko Peltomaa\'s Blog',
+  siteTitleManifest: 'Touko Peltomaa Blog',
   siteUrl: 'https://blog.toukopeltomaa.com', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteHeadline: 'Writing and publishing content', // Headline for schema.org JSONLD
