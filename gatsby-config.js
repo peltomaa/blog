@@ -110,8 +110,8 @@ module.exports = {
                 }
               }
             `,
-            output: "/rss.xml",
-            title: "Your Site's RSS Feed",
+            output: '/rss.xml',
+            title: 'RSS Feed',
           },
         ],
       },
