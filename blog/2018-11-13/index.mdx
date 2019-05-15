@@ -64,7 +64,7 @@ export default class extends React.Component {
             const values = keys.map(ctx);
 
             const data = keys.map((key, index) => {
-                // Create slug from file name
+                // Create slug from filename
                 const slug = key.replace(/^.*[\\\/]/, '').split('.').slice(0, -1).join('.');
                 const value = values[index];
 
@@ -99,7 +99,7 @@ export default class extends React.Component {
     }
 }
 ```
-The `getInitialProps` function gets posts from posts folder and returns them in a usable format. *We are going to use your file name as our post's slug or id*
+The `getInitialProps` function gets posts from posts folder and returns them in a usable format. *We are going to use your filename as our post's slug or id*
 
 ### 3. Create post page at pages/post.js
 Get document name from querystring, require it and parse it.
