@@ -205,7 +205,7 @@ const Layout = ({ children, customSEO }) => {
         {children}
         <Footer>
           &copy; 2019 by Touko Peltomaa. All rights reserved. <br />
-          <a href="/">GitHub Repository</a> <br />
+          <a href="https://github.com/peltomaa/blog">GitHub Repository</a> <br />
           <span>Last build: {buildTime}</span>
         </Footer>
       </>
