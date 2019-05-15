@@ -72,7 +72,7 @@ const SEO = props => {
         name: 'Homepage',
       },
       position: 1,
-    }
+    },
   ]
 
   let schemaArticle = null
