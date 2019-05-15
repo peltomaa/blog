@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
 
-  siteTitle: 'Touko Peltomaa\'s blog', // Navigation and Site Title
+  siteTitle: "Touko Peltomaa's blog", // Navigation and Site Title
   siteTitleAlt: 'Blog - Touko Peltomaa', // Alternative Site title for SEO
   siteTitleManifest: 'ToukoPeltomaaBlog',
   siteUrl: 'https://blog.toukopeltomaa.com', // Domain of your site. No trailing slash!
@@ -22,5 +22,5 @@ module.exports = {
   // Manifest and Progress color
   // See: https://developers.google.com/web/fundamentals/web-app-manifest/
   themeColor: '#3498DB',
-  backgroundColor: '#2b2e3c'
+  backgroundColor: '#2b2e3c',
 }
