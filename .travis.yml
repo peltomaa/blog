@@ -10,6 +10,7 @@ deploy:
   github-token: $GITHUB_TOKEN
   local_dir: public
   keep-history: true
+  fqdn: blog.toukopeltomaa.com
   on:
     branch: master
 before_script:
