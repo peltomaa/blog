@@ -7,7 +7,7 @@ module.exports = {
   siteUrl: 'https://blog.toukopeltomaa.com', // Domain of your site. No trailing slash!
   siteLanguage: 'en', // Language Tag on <html> element
   siteHeadline: 'Writing and publishing content', // Headline for schema.org JSONLD
-  siteBanner: '/social/banner.jpg', // Your image for og:image tag. You can find it in the /static folder
+  siteBanner: '/social/banner.png', // Your image for og:image tag. You can find it in the /static folder
   favicon: 'src/favicon.png', // Your image for favicons. You can find it in the /src folder
   siteDescription: 'My blog posts about Programming, Analytics, Mobile Web, Mobile Apps and much more!', // Your site description
   author: 'Touko Peltomaa', // Author for schemaORGJSONLD
