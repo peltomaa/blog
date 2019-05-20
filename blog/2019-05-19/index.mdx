@@ -11,18 +11,22 @@ import YouTube from '../../src/components/YouTube'
 
 <YouTube id='0EHSPFvH7vk' />
 
-At the Google I/O 2019 Firebase released it's Firebase Performance Monitoring plugin to web.
-This is a easy way to find out page speed bottlenecks that are hurting the user experience.
+At the Google I/O 2019 Firebase released it's Firebase Performance Monitoring plugin to the web.
+Firebase Performance Monitoring is a easy way to find out page speed bottlenecks that are hurting the user experience.
 The web version of this plugin is now in open beta.
 
 ## What does the Firebase Performance Monitoring measure?
-The plugin measures [six default metrics](#default-metrics) and network traffic response time.
+The plugin measures [six default metrics](#default-metrics) and network traffic's response time.
 Users also can implement their own measurements using JavaScript.
+
+### The default metriccs
+![Firebase Performance Monitoring default metrics dashboard](./firebase-perf-screenshot.png)
+
 
 ## Implementation tutorial
 In this tutorial we go through how to implement the SDK to a website.
 There are many ways to implement this SDK. In this tutorial we are implementing the standalone SDK from the CDN.
-Check out other ways from the [Firebase Performance Monitoring official documentation](https://firebase.google.com/docs/perf-mon/get-started-web)
+Check out other ways from the [Firebase Performance Monitoring official documentation](https://firebase.google.com/docs/perf-mon/get-started-web).
 ### The HTML tracking snippet for Firebase Performance Monitoring
 Implement snippet below as a first tag inside head.
 ```html
@@ -64,7 +68,7 @@ Get your app's Firebase config object
 }
 ```
 from the Firebase console.
-More info from the [Firebase official documentation](https://firebase.google.com/docs/web/setup#config-object)
+More info from the [Firebase official documentation](https://firebase.google.com/docs/web/setup#config-object).
 ## Ready to measure
 You ready to measure your site's performance. After the implementation give Firebase 12 hours to gather data.
 
