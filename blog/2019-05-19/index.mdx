@@ -16,12 +16,10 @@ Firebase Performance Monitoring is a easy way to find out page speed bottlenecks
 The web version of this plugin is now in open beta.
 
 ## What does the Firebase Performance Monitoring measure?
-The plugin measures [six default metrics](#default-metrics) and network traffic's response time.
-Users also can implement their own measurements using JavaScript.
+The plugin measures [six default traces](#default-traces) and network traffic's response time.
+Users also can implement their own measurements using JavaScript described in [Firebase Performance Monitoring Documentation](https://firebase.google.com/docs/perf-mon/get-started-web#add-custom-trace).
 
-### The default metriccs
 ![Firebase Performance Monitoring default metrics dashboard](./firebase-perf-screenshot.png)
-
 
 ## Implementation tutorial
 In this tutorial we go through how to implement the SDK to a website.
@@ -72,8 +70,8 @@ More info from the [Firebase official documentation](https://firebase.google.com
 ## Ready to measure
 You ready to measure your site's performance. After the implementation give Firebase 12 hours to gather data.
 
-## Default metrics
-There are six default metrics that the plugin measures.
+## Default traces
+There are six default traces that the plugin measures.
 
 ##### first paint traces
 measure the time between when the user navigates to a page and when any visual change happens
