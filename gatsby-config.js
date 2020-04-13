@@ -1,120 +1,79 @@
-const config = require('./config')
-
-const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix
+require(`dotenv`).config({
+  path: `.env`,
+})
 
 module.exports = {
-  pathPrefix: config.pathPrefix,
   siteMetadata: {
-    siteUrl: config.siteUrl + pathPrefix,
+    // Used for the title template on pages other than the index site
+    siteTitle: `Touko's blog`,
+    // Default title of the page
+    siteTitleAlt: `Touko Peltomaa's blog`,
+    // Can be used for e.g. JSONLD
+    siteHeadline: `Touko Peltomaa's blog`,
+    // Will be used to generate absolute URLs for og:image etc.
+    siteUrl: `https://blog.toukopeltomaa.com`,
+    // Used for SEO
+    siteDescription: `I'm a developer who is interested in Analytics, Mobile Web, Mobile Apps and much more!`,
+    // Will be set on the <html /> tag
+    siteLanguage: `en`,
+    // Used for og:image and must be placed inside the `static` folder
+    siteImage: `/banner.png`,
+    // Twitter Handle
+    author: `@toukopeltomaa`,
+    navigation: [
+      {
+        title: `Blog`,
+        slug: `/blog`,
+      }
+    ],
   },
+
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-sharp',
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `@lekoarts/gatsby-theme-minimal-blog`,
       options: {
-        name: 'post',
-        path: `${__dirname}/blog`,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: config.googleAnalyticsID,
-        optimizeId: config.googleOptimizeID,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-mdx',
-      options: {
-        gatsbyRemarkPlugins: [
+        navigation: [
           {
-            resolve: 'gatsby-remark-external-links',
-            options: {
-              target: '_blank',
-              rel: 'nofollow noopener noreferrer',
-            },
-          },
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              maxWidth: 830,
-              quality: 90,
-              withWebp: true,
-              linkImagesToOriginal: false,
-            },
-          },
-          // TODO: Replace with "mdx-component-autolink-headers"
-          {
-            resolve: 'gatsby-remark-autolink-headers',
-            options: {
-              maintainCase: false,
-            },
-          },
-        ],
-      },
-    },
-    'gatsby-plugin-catch-links',
-    'gatsby-plugin-sitemap',
-    'gatsby-plugin-lodash',
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: config.siteTitleAlt,
-        short_name: config.siteTitleManifest,
-        description: config.siteDescription,
-        start_url: config.pathPrefix,
-        background_color: config.backgroundColor,
-        theme_color: config.themeColor,
-        display: 'standalone',
-        icon: config.favicon,
-      },
-    },
-    'gatsby-plugin-offline',
-    {
-      resolve: `gatsby-plugin-feed`,
-      options: {
-        query: `
-          {
-            site {
-              siteMetadata {
-                siteUrl
-              }
-            }
+            title: `Blog`,
+            slug: `/blog`,
           }
-        `,
-        feeds: [
+        ],
+        externalLinks: [],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GOOGLE_ANALYTICS_ID,
+      },
+    },
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `minimal-blog - @lekoarts/gatsby-theme-minimal-blog`,
+        short_name: `minimal-blog`,
+        description: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and code highlighting.`,
+        start_url: `/`,
+        background_color: `#fff`,
+        theme_color: `#6B46C1`,
+        display: `standalone`,
+        icons: [
           {
-            serialize: ({ query: { site, allMdx } }) =>
-              allMdx.edges.map(edge =>
-                Object.assign({}, edge.node.frontmatter, {
-                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
-                })
-              ),
-            query: `
-              {
-                allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
-                  edges {
-                    node {
-                      fields {
-                        slug
-                      }
-                      frontmatter {
-                        title
-                        date
-                      }
-                    }
-                  }
-                }
-              }
-            `,
-            output: '/rss.xml',
-            title: 'RSS Feed',
+            src: `/android-chrome-192x192.png`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `/android-chrome-512x512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
           },
         ],
       },
     },
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-netlify`,
+    // `gatsby-plugin-webpack-bundle-analyser-v2`,
   ],
 }
