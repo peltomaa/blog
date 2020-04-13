@@ -1,0 +1,35 @@
+{
+    "hosting": {
+        "public": "public",
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**"
+        ],
+        "redirects": [{
+            "source": "/Next-JS-Markdown-blog",
+            "destination": "/next-js-markdown-blog",
+            "type": 301
+        }, {
+            "source": "/a-simple-next-js-markdown-blog",
+            "destination": "/next-js-markdown-blog",
+            "type": 301
+        }, {
+            "source": "/Run-simple-scheduled-Lighthouse-tests-on-GitLab-CI",
+            "destination": "/run-simple-scheduled-lighthouse-tests-on-git-lab-ci",
+            "type": 301
+        }, {
+            "source": "/How-to-change-React-Native-App-ID-or-Name/",
+            "destination": "/how-to-change-react-native-app-id-or-name",
+            "type": 301
+        }, {
+            "source": "/Firebase-In-App-Messaging",
+            "destination": "/getting-touch-with-the-users-using-firebase-in-app-messaging",
+            "type": 301
+        }, {
+            "source": "/about",
+            "destination": "https://toukopeltomaa.com",
+            "type": 301
+        }]
+    }
+}
